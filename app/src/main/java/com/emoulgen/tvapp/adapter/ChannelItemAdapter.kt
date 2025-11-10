@@ -1,9 +1,11 @@
 package com.emoulgen.tvapp.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.emoulgen.tvapp.ChannelItemActivity
 import com.emoulgen.tvapp.databinding.ChannelItemBinding
 
 class ChannelItemAdapter(val context: Context, val list: List<String>): RecyclerView.Adapter<ChannelItemAdapter.ChannelItemViewHolder>() {
@@ -23,7 +25,8 @@ class ChannelItemAdapter(val context: Context, val list: List<String>): Recycler
             linkName.text = "Link ${list[position]}"
 
             root.setOnClickListener {
-
+                val intent = Intent(context, ChannelItemActivity::class.java)
+                context.startActivity(intent)
             }
         }
     }
